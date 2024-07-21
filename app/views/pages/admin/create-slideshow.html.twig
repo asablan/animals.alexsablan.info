@@ -1,0 +1,31 @@
+{% extends "base.html.twig" %}
+
+{% block page_content %}
+    <div class="row">
+        <div class="col-md-3">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/create-slideshow">Create a New Slideshow</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-9">
+            <h1>Create a New Slideshow</h1>
+            <form action="/admin/create-slideshow" method="post">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Slideshow Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea class="form-control" id="description" name="description"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="tags" class="form-label">Tags (comma-separated)</label>
+                    <input type="text" class="form-control" id="tags" name="tags">
+                </div>
+                <button type="submit" class="btn btn-primary">Create</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
